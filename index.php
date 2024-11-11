@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$yourNumber = 100;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+function isPrime($num)
+{
+    for ($i = 2; $i < $num; $i++) {
+        if ($num % $i == 0) {
+        } else {
+            echo $i . ' is prime';
+        }
+    }
+}
 
-<body>
-    <form action="primeNumber.php" method="post">
-        <div>
-            <label>Your range</label>
-            <input type="number" name="yourNumber">
-        </div>
-        <div>
-            <input type="submit">
-        </div>
-    </form>
-</body>
 
-</html>
+isPrime($yourNumber);
