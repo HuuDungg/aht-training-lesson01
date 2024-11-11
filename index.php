@@ -8,13 +8,13 @@
 </head>
 
 <body>
-    <form action="convertNumber.php" method="post">
+    <form action="primeNumber.php" method="post">
         <div>
-            <label>Your number</label>
+            <label>Your range</label>
             <input type="number" name="yourNumber">
         </div>
         <div>
-            <input type="submit" value="Convert to text">
+            <input type="submit">
         </div>
     </form>
 </body>
