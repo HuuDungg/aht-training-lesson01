@@ -8,21 +8,13 @@
 </head>
 
 <body>
-    <form action="futureValue.php" method="post">
+    <form action="convertNumber.php" method="post">
         <div>
-            <label>Investment Amount</label>
-            <input type="text" name="investment">
+            <label>Your number</label>
+            <input type="number" name="yourNumber">
         </div>
         <div>
-            <label>Yearly Interest Rate(%)</label>
-            <input type="text" name="rate">
-        </div>
-        <div>
-            <label>Number of Years</label>
-            <input type="text" name="years">
-        </div>
-        <div>
-            <input type="submit" name="Calculate future Value">
+            <input type="submit" value="Convert to text">
         </div>
     </form>
 </body>
