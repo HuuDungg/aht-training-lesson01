@@ -1,42 +1,79 @@
-<!DOCTYPE HTML>
+<?php
+$customerlist = array(
+    "1" => array(
+        "ten" => "Mai Văn Hoàn",
+        "ngaysinh" => "1983-08-20",
+        "diachi" => "Hà Nội",
+        "anh" => "images/img1.jpg"
+    ),
+    "2" => array(
+        "ten" => "Nguyễn Văn Nam",
+        "ngaysinh" => "1983-08-20",
+        "diachi" => "Bắc Giang",
+        "anh" => "images/img2.jpg"
+    ),
+    "3" => array(
+        "ten" => "Nguyễn Thái Hòa",
+        "ngaysinh" => "1983-08-21",
+        "diachi" => "Nam Định",
+        "anh" => "images/img3.jpg"
+    ),
+    "4" => array(
+        "ten" => "Trần Đăng Khoa",
+        "ngaysinh" => "1983-08-22",
+        "diachi" => "Hà Tây",
+        "anh" => "images/img4.jpg"
+    ),
+    "5" => array(
+        "ten" => "Nguyễn Đình Thi",
+        "ngaysinh" => "1983-08-17",
+        "diachi" => "Hà Nội",
+        "anh" => "images/img5.jpg"
+    )
+);
+?>
+
+<!DOCTYPE html>
 <html>
-<style type="text/css">
-    .login {
-        height: 180px;
-        width: 230px;
-        margin: 0;
-        padding: 10px;
-        border: 1px #CCC solid;
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
     }
 
-    .login input {
-        padding: 5px;
-        margin: 5px
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
     }
 </style>
 
 <body>
-    <form method="post">
-        <div class="login">
-            <h2>Login</h2>
-            <input type="text" name="username" size="30" placeholder="username" />
-            <input type="password" name="password" size="30" placeholder="password" />
-            <input type="submit" value="Sign in" />
-        </div>
-    </form>
+    <table>
+        <caption>
+            <h1>Danh sách khách hàng</h1>
+        </caption>
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th>Ảnh</th>
+        </tr>
+        <?php
+        foreach ($customerlist as $key => $values) {
+            echo "<tr>";
+            echo "<td>" . $key . "</td>";
+            echo "<td>" . $values['ten'] . "</td>";
+            echo "<td>" . $values['ngaysinh'] . "</td>";
+            echo "<td>" . $values['diachi'] . "</td>";
+            echo "<td><image src ='" . $values['anh'] . "' width = '60px' height ='60px'/></td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
 </body>
 
 </html>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    if ($username === "admin" && $password === "admin") {
-        echo "<h2>Welcome <span style='color:red'>" . $username . "</span> to website</h2>";
-    } else {
-        echo "<h2><span style='color:red'>Login Error</span></h2>";
-    }
-}
-?>
